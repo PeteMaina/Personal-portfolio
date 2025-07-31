@@ -944,6 +944,58 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDJ8d50TxHcE8cnpe7R-vHoOF8TeTTBEd0",
+    authDomain: "views-analytics.firebaseapp.com",
+    projectId: "views-analytics",
+    storageBucket: "views-analytics.firebasestorage.app",
+    messagingSenderId: "829478967684",
+    appId: "1:829478967684:web:81251e4d563750644ca5d1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+
+<script>
+  let startTime = Date.now();
+
+  window.addEventListener('beforeunload', () => {
+    const endTime = Date.now();
+    const timeSpentMinutes = Math.round((endTime - startTime) / 60000);
+    const currentTime = new Date().toISOString();
+    const deviceInfo = navigator.userAgent;
+
+    // Get IP address from public API
+    fetch('https://api.ipify.org?format=json')
+      .then(res => res.json())
+      .then(data => {
+        const ip = data.ip;
+
+        // Log to Firebase Firestore
+        db.collection("userLogs").add({
+          ip: ip,
+          device: deviceInfo,
+          currentTime: currentTime,
+          timeSpentMinutes: timeSpentMinutes
+        })
+        .then(() => {
+          console.log("Log saved successfully.");
+        })
+        .catch(error => {
+          console.error("Error saving log:", error);
+        });
+      });
+  });
+</script>
+
 
 </body>
 
