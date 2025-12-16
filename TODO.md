@@ -3,7 +3,7 @@
 ## Overview
 This TODO outlines the steps to implement suggestions for adding multiple projects with visualizations (pictures and brief explanations) and certifications in a carousel form with verification marks and logos. The goal is to enhance UX while maintaining consistency with the existing codebase.
 
-## 1. Enhance Portfolio Section for Multiple Projects with Visualizations
+1. Enhance Portfolio Section for Multiple Projects with Visualizations
    - **1.1 Update HTML Structure**
      - Modify each `.project-item > a` in the portfolio section to include data attributes for modal triggering (e.g., `data-project-modal`).
      - Add a new modal container for projects (reuse and adapt the testimonials modal structure) with placeholders for larger images, descriptions, tech stacks, and links.
@@ -60,3 +60,5 @@ This TODO outlines the steps to implement suggestions for adding multiple projec
 - Prioritize based on user feedback (e.g., start with portfolio enhancements).
 - After each major step, test incrementally to avoid issues.
 - If content (images, descriptions) is not ready, placeholders can be used initially.
+
+- publish soon
