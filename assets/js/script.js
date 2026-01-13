@@ -121,7 +121,7 @@ const formBtn = document.querySelector("[data-form-btn]");
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
 
-    
+
     if (form.checkValidity()) {
       formBtn.removeAttribute("disabled");
     } else {
@@ -155,4 +155,39 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+
+
+// Project modal variables
+const projectModalContainer = document.querySelector("[data-modal-container-project]");
+const projectModalCloseBtn = document.querySelector("[data-modal-close-btn-project]");
+const projectOverlay = document.querySelector("[data-overlay-project]");
+const projectModalImg = document.querySelector("[data-modal-img-project]");
+
+// Project modal toggle function
+const projectModalFunc = function () {
+  projectModalContainer.classList.toggle("active");
+  projectOverlay.classList.toggle("active");
+
+  // Toggle body scroll
+  document.body.style.overflow = projectModalContainer.classList.contains("active") ? "hidden" : "auto";
+}
+
+// Event delegation for project items
+document.addEventListener("click", function (event) {
+  const projectLink = event.target.closest("[data-project-link]");
+
+  if (projectLink) {
+    event.preventDefault();
+    const img = projectLink.querySelector("img");
+    if (img) {
+      projectModalImg.src = img.src;
+      projectModalImg.alt = img.alt;
+      projectModalFunc();
+    }
+  }
+});
+
+// Add click event to close button and overlay
+if (projectModalCloseBtn) projectModalCloseBtn.addEventListener("click", projectModalFunc);
+if (projectOverlay) projectOverlay.addEventListener("click", projectModalFunc);
 

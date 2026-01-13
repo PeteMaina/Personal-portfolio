@@ -1620,7 +1620,24 @@ textarea.form-input::-webkit-resizer {
 
   /* #PORTFOLIO, BLOG*/
 
-  .project-img,
+  .project-img {
+    border-radius: 16px;
+    height: 200px;
+    /* Consistent height */
+    overflow: hidden;
+  }
+
+  .project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-1);
+  }
+
+  .project-item:hover .project-img img {
+    transform: scale(1.1);
+  }
+
   .blog-banner-box {
     border-radius: 16px;
   }
@@ -2018,4 +2035,97 @@ footer {
   justify-content: center;
   align-items: center;
   color: coral;
+  padding: 20px 0;
+}
+
+/* Lightbox Modal Styles */
+[data-modal-container-project] {
+  z-index: 100 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+[data-modal-container-project].active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+[data-modal-container-project] .project-modal {
+  background: var(--eerie-black-2);
+  position: relative;
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  box-shadow: var(--shadow-5);
+  transform: scale(0.8);
+  opacity: 0;
+  transition: var(--transition-2);
+  max-width: 900px;
+  width: calc(100% - 30px);
+  z-index: 101;
+}
+
+[data-modal-container-project].active .project-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+[data-overlay-project] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: hsl(0, 0%, 5%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 99;
+  transition: var(--transition-1);
+}
+
+[data-overlay-project].active {
+  opacity: 0.85;
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* Modal Close Button for Project */
+[data-modal-close-btn-project] {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--onyx);
+  color: var(--white-2);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  z-index: 102;
+  transition: var(--transition-1);
+  opacity: 0.7;
+}
+
+[data-modal-close-btn-project]:hover {
+  opacity: 1;
+  color: var(--orange-yellow-crayola);
+}
+
+[data-modal-img-project] {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
 }

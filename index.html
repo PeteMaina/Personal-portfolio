@@ -639,6 +639,10 @@
               <button data-filter-btn>Web development</button>
             </li>
 
+            <li class="filter-item">
+              <button data-filter-btn>AI Powered Solutions</button>
+            </li>
+
           </ul>
 
           <div class="filter-select-box">
@@ -671,6 +675,9 @@
                 <button data-select-item>Web development</button>
               </li>
 
+              <li class="select-item">
+                <button data-select-item>AI Powered Solutions</button>
+              </li>
 
             </ul>
 
@@ -678,8 +685,44 @@
 
           <ul class="project-list">
 
+            <li class="project-item  active" data-filter-item data-category="ai powered solutions">
+              <a href="#" data-project-link>
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/Farm AI.png" alt="Farm AI" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Farm AI</h3>
+
+                <p class="project-category">AI Powered Solutions</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="ai powered solutions">
+              <a href="#" data-project-link>
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/medcheck AI.png" alt="Medcheck AI" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Medcheck AI</h3>
+
+                <p class="project-category">AI Powered Solutions</p>
+
+              </a>
+            </li>
+
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -697,7 +740,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -715,7 +758,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -733,7 +776,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -751,7 +794,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -769,7 +812,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -787,7 +830,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -805,7 +848,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -823,7 +866,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -873,7 +916,11 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+          <form action="https://formsubmit.co/peterwahomemaina003@gmail.com" method="POST" class="form" data-form>
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Portfolio Message!">
+            <input type="hidden" name="_next" value="https://peteMaina.github.io/">
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
@@ -996,6 +1043,24 @@
         });
     });
   </script>
+
+
+  <!-- 
+    - project modal (Lightbox)
+  -->
+  <div class="modal-container" data-modal-container-project>
+    <div class="overlay" data-overlay-project></div>
+    <section class="project-modal">
+      <button class="modal-close-btn" data-modal-close-btn-project>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <div class="modal-img-wrapper">
+        <figure class="modal-avatar-box-project">
+          <img src="" alt="" data-modal-img-project style="width: 100%; border-radius: 20px;">
+        </figure>
+      </div>
+    </section>
+  </div>
 
 
 </body>
